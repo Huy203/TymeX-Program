@@ -13,7 +13,6 @@
 		BA62A91D2CE88A2700367143 /* currency_converterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A91C2CE88A2700367143 /* currency_converterTests.swift */; };
 		BA62A9272CE88A2700367143 /* currency_converterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9262CE88A2700367143 /* currency_converterUITests.swift */; };
 		BA62A9292CE88A2700367143 /* currency_converterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9282CE88A2700367143 /* currency_converterUITestsLaunchTests.swift */; };
-		BA62A9472CE8920600367143 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9462CE8920600367143 /* APIEndpoint.swift */; };
 		BA62A94A2CE8924F00367143 /* HTTPRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9492CE8924F00367143 /* HTTPRequests.swift */; };
 		BA62A94E2CE898E500367143 /* ExchangeRates.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A94D2CE898E500367143 /* ExchangeRates.model.swift */; };
 		BA62A9512CE8997D00367143 /* ExchangeRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9502CE8997D00367143 /* ExchangeRatesView.swift */; };
@@ -48,11 +47,12 @@
 		BA62A9262CE88A2700367143 /* currency_converterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currency_converterUITests.swift; sourceTree = "<group>"; };
 		BA62A9282CE88A2700367143 /* currency_converterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currency_converterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BA62A9372CE88D2400367143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA62A9462CE8920600367143 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		BA62A9492CE8924F00367143 /* HTTPRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequests.swift; sourceTree = "<group>"; };
 		BA62A94D2CE898E500367143 /* ExchangeRates.model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.model.swift; sourceTree = "<group>"; };
 		BA62A9502CE8997D00367143 /* ExchangeRatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesView.swift; sourceTree = "<group>"; };
 		BA62A9522CE89A7500367143 /* ExchangeRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewModel.swift; sourceTree = "<group>"; };
+		BA62A9592CE8A50300367143 /* Env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Env.xcconfig; sourceTree = "<group>"; };
+		BA62A95A2CE8A5F300367143 /* EnvTemplate.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EnvTemplate.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +103,10 @@
 		BA62A90A2CE88A2500367143 /* currency-converter */ = {
 			isa = PBXGroup;
 			children = (
+				BA62A93C2CE88F2400367143 /* Models */,
+				BA62A9422CE890D400367143 /* Views */,
 				BA62A90B2CE88A2500367143 /* App.swift */,
 				BA62A93B2CE88F1200367143 /* Core */,
-				BA62A9442CE891C200367143 /* Features */,
 				BA62A9452CE891D900367143 /* Networks */,
 				BA62A9362CE88CF800367143 /* Resources */,
 			);
@@ -151,27 +152,16 @@
 		BA62A93B2CE88F1200367143 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BA62A9432CE8918600367143 /* Utilities */,
-				BA62A9422CE890D400367143 /* Views */,
-				BA62A93E2CE88F3200367143 /* Extensions */,
-				BA62A93C2CE88F2400367143 /* Entities */,
 			);
 			name = Core;
 			sourceTree = "<group>";
 		};
-		BA62A93C2CE88F2400367143 /* Entities */ = {
+		BA62A93C2CE88F2400367143 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BA62A94D2CE898E500367143 /* ExchangeRates.model.swift */,
 			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		BA62A93E2CE88F3200367143 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BA62A9422CE890D400367143 /* Views */ = {
@@ -182,25 +172,10 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BA62A9432CE8918600367143 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
-		BA62A9442CE891C200367143 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Features;
-			sourceTree = "<group>";
-		};
 		BA62A9452CE891D900367143 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
 				BA62A9542CE89C8600367143 /* Services */,
-				BA62A9462CE8920600367143 /* APIEndpoint.swift */,
 				BA62A9492CE8924F00367143 /* HTTPRequests.swift */,
 			);
 			path = Networks;
@@ -209,6 +184,8 @@
 		BA62A94B2CE896B800367143 /* Secrets */ = {
 			isa = PBXGroup;
 			children = (
+				BA62A9592CE8A50300367143 /* Env.xcconfig */,
+				BA62A95A2CE8A5F300367143 /* EnvTemplate.xcconfig */,
 			);
 			name = Secrets;
 			sourceTree = "<group>";
@@ -362,7 +339,6 @@
 				BA62A94A2CE8924F00367143 /* HTTPRequests.swift in Sources */,
 				BA62A9532CE89A7500367143 /* ExchangeRatesViewModel.swift in Sources */,
 				BA62A94E2CE898E500367143 /* ExchangeRates.model.swift in Sources */,
-				BA62A9472CE8920600367143 /* APIEndpoint.swift in Sources */,
 				BA62A9512CE8997D00367143 /* ExchangeRatesView.swift in Sources */,
 				BA62A90C2CE88A2500367143 /* App.swift in Sources */,
 			);
@@ -459,13 +435,15 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited) -DENV_FILE=Secrets.xcconfig";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		BA62A92B2CE88A2700367143 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA62A9592CE8A50300367143 /* Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -523,6 +501,7 @@
 		};
 		BA62A92D2CE88A2700367143 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA62A9592CE8A50300367143 /* Env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
