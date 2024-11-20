@@ -18,7 +18,6 @@ class CurrencyViewModel: ObservableObject {
             api.get(endpoint: "latest") { (result: Result<IExchangeRates, Error>) in
                 switch result {
                 case .success(let exchangeRates):
-                    print(result)
                     DispatchQueue.main.async {
                         if self.rates != exchangeRates.rates {
                             self.rates = exchangeRates.rates
