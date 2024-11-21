@@ -32,7 +32,7 @@ This is a SwiftUI-based Currency Converter app that uses the [ExchangeRates API]
 2. **Open the Xcode project:**
 
    ```bash
-   open CurrencyConverter.xcodeproj
+   open currency-converter.xcodeproj
    ```
 
 3. **Set up the API key:**
