@@ -1,0 +1,31 @@
+import XCTest
+@testable import currency_converter
+
+final class ExchangeRatesViewModelTests: XCTestCase {
+    let mockRates: [String: Double] = ["SCR": 14.356557, "PAB": 1.054899, "BIF": 3115.891098, "IDR": 16798.602291, "CUC": 1.05408, "KHR": 4256.938535, "ZMW": 29.195862, "CNY": 7.629477, "VUV": 125.142443, "CNH": 7.633333, "KPW": 948.671197, "QAR": 3.847074, "ANG": 1.901279, "DOP": 63.628885, "BZD": 2.12647, "LYD": 5.147507, "LAK": 23165.00188, "ZMK": 9487.983587, "STD": 21817.318535, "BYN": 3.452428, "XDR": 0.802711, "MYR": 4.70753, "CUP": 27.933108, "TOP": 2.468759, "RSD": 117.034422, "ZWL": 339.413185, "BTC": 1.0877397e-05, "LVL": 0.637602, "KWD": 0.324171, "GGP": 0.832003, "CHF": 0.931269, "MNT": 3581.762259, "SHP": 0.832003, "MOP": 8.458084, "BAM": 1.954872, "XAF": 655.6395, "UAH": 43.501034, "JEP": 0.832003, "BMD": 1.05408, "CAD": 1.471052, "JPY": 162.829963, "MKD": 61.571774, "TZS": 2798.432583, "EGP": 52.500644, "LRD": 190.947532, "VND": 26793.121077, "IMP": 0.832003, "COP": 4634.355615, "BWP": 14.412021, "NPR": 142.397367, "HRK": 7.519022, "GEL": 2.888088, "CLP": 1026.483998, "DJF": 187.859027, "MDL": 19.199884, "KMF": 492.785439, "HKD": 8.203796, "SEK": 11.593663, "XAG": 0.033809, "BND": 1.416814, "NAD": 19.134615, "GYD": 220.71521, "IQD": 1381.94389, "GIP": 0.832003, "MMK": 3423.609266, "ALL": 98.052517, "MRU": 41.937492, "MUR": 49.035456, "LBP": 94480.8467, "EUR": 1.0, "MGA": 4938.608429, "AFN": 72.08475, "BHD": 0.397268, "GTQ": 8.144133, "MAD": 10.538996, "VES": 48.490771, "NZD": 1.793979, "BGN": 1.958352, "MVR": 16.295933, "CRC": 535.738022, "TTD": 7.142609, "XAU": 0.000395, "PLN": 4.350702, "SVC": 9.230618, "UZS": 13549.56703, "CVE": 110.212674, "GBP": 0.833735, "BSD": 1.054989, "SZL": 19.123739, "BTN": 88.999745, "BBD": 2.130068, "NIO": 38.8212, "CZK": 25.312451, "DKK": 7.459046, "HUF": 410.948752, "SGD": 1.41458, "JMD": 167.219023, "FKP": 0.832003, "TMT": 3.689278, "AUD": 1.616463, "SRD": 37.346117, "ERN": 15.811193, "IRR": 44368.842414, "PHP": 62.20761, "PYG": 8261.999044, "AWG": 1.897343, "DZD": 140.696003, "ZAR": 19.121762, "BOB": 7.305532, "PKR": 293.27308, "LTL": 3.112422, "SOS": 602.908036, "TJS": 11.235166, "LKR": 306.934276, "KZT": 524.06119, "RUB": 106.148308, "CDF": 3019.937663, "MZN": 67.408127, "TWD": 34.309763, "SBD": 8.807394, "INR": 89.057813, "AMD": 410.405151, "NGN": 1771.475439, "OMR": 0.405825, "GMD": 74.839632, "ARS": 1056.978517, "KRW": 1473.97185, "HNL": 26.658964, "SDG": 634.030455, "SLL": 22103.526145, "TRY": 36.389836, "LSL": 19.134615, "KYD": 0.879183, "XCD": 2.848703, "KGS": 91.1843, "RWF": 1454.795501, "XOF": 655.6395, "ETB": 131.530381, "PGK": 4.246923, "UGX": 3893.151636, "TND": 3.329919, "YER": 263.440823, "USD": 1.05408, "CLF": 0.037201, "BRL": 6.105758, "THB": 36.513072, "RON": 4.978099, "FJD": 2.391915, "MWK": 1829.314136, "BYR": 20659.959207, "AZN": 1.79097, "KES": 136.501004, "UYU": 45.098588, "PEN": 4.003499, "JOD": 0.747449, "XPF": 119.331742, "ILS": 3.931073, "SAR": 3.957497, "SYP": 2648.406346, "NOK": 11.641671, "GNF": 9093.55322, "GHS": 16.747049, "AOA": 962.374643, "WST": 2.942559, "ISK": 145.547604, "MXN": 21.383482, "AED": 3.871636, "BDT": 126.070145, "HTG": 138.58289, "SLE": 23.795831]
+
+    func testFetchExchangeRates() {
+        let viewModel = CurrencyViewModel()
+        
+        viewModel.rates = mockRates
+        
+        viewModel.fetchExchangeRates()
+
+        XCTAssertEqual(viewModel.rates, mockRates)
+    }
+
+    func testConvert() {
+        let viewModel = CurrencyViewModel()
+
+        viewModel.rates = mockRates
+        viewModel.fetchExchangeRates()
+        let amount: Double = 100.0
+        let from: String = "USD"
+        let to: String = "VND"
+        
+        viewModel.convert(amount: 100.0, from: "USD", to: "VND")
+        let testValue = amount * mockRates[to]! / mockRates[from]!
+
+        XCTAssertEqual(viewModel.result!, testValue, accuracy: 0.01)
+    }
+}
