@@ -17,7 +17,11 @@
 		BA62A9512CE8997D00367143 /* ExchangeRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9502CE8997D00367143 /* ExchangeRatesView.swift */; };
 		BA62A9532CE89A7500367143 /* ExchangeRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9522CE89A7500367143 /* ExchangeRatesViewModel.swift */; };
 		BAC6C4072CEDD123007BDBEB /* currency-converterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6C4042CEDD123007BDBEB /* currency-converterTests.swift */; };
-		BAC6C4082CEDD123007BDBEB /* ExchangeRatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6C4052CEDD123007BDBEB /* ExchangeRatesTests.swift */; };
+		BAC6C4082CEDD123007BDBEB /* ExchangeRatesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6C4052CEDD123007BDBEB /* ExchangeRatesViewModelTests.swift */; };
+		BAC902252CEF275900D81595 /* Env.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BAC902242CEF275800D81595 /* Env.xcconfig */; };
+		BAC902262CEF2E3B00D81595 /* ExchangeRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9522CE89A7500367143 /* ExchangeRatesViewModel.swift */; };
+		BAC902272CEF2E3E00D81595 /* HTTPRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A9492CE8924F00367143 /* HTTPRequests.swift */; };
+		BAC902282CEF2E5200D81595 /* ExchangeRates.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62A94D2CE898E500367143 /* ExchangeRates.model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +55,10 @@
 		BA62A94D2CE898E500367143 /* ExchangeRates.model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.model.swift; sourceTree = "<group>"; };
 		BA62A9502CE8997D00367143 /* ExchangeRatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesView.swift; sourceTree = "<group>"; };
 		BA62A9522CE89A7500367143 /* ExchangeRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewModel.swift; sourceTree = "<group>"; };
-		BA62A9592CE8A50300367143 /* Env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Env.xcconfig; sourceTree = "<group>"; };
 		BA62A95A2CE8A5F300367143 /* EnvTemplate.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EnvTemplate.xcconfig; sourceTree = "<group>"; };
 		BAC6C4042CEDD123007BDBEB /* currency-converterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "currency-converterTests.swift"; sourceTree = "<group>"; };
-		BAC6C4052CEDD123007BDBEB /* ExchangeRatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesTests.swift; sourceTree = "<group>"; };
+		BAC6C4052CEDD123007BDBEB /* ExchangeRatesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewModelTests.swift; sourceTree = "<group>"; };
+		BAC902242CEF275800D81595 /* Env.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Env.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +174,7 @@
 		BA62A94B2CE896B800367143 /* Secrets */ = {
 			isa = PBXGroup;
 			children = (
-				BA62A9592CE8A50300367143 /* Env.xcconfig */,
+				BAC902242CEF275800D81595 /* Env.xcconfig */,
 				BA62A95A2CE8A5F300367143 /* EnvTemplate.xcconfig */,
 			);
 			name = Secrets;
@@ -196,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC6C4042CEDD123007BDBEB /* currency-converterTests.swift */,
-				BAC6C4052CEDD123007BDBEB /* ExchangeRatesTests.swift */,
+				BAC6C4052CEDD123007BDBEB /* ExchangeRatesViewModelTests.swift */,
 			);
 			path = "currency-converterTests";
 			sourceTree = SOURCE_ROOT;
@@ -309,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA62A9132CE88A2700367143 /* Preview Assets.xcassets in Resources */,
+				BAC902252CEF275900D81595 /* Env.xcconfig in Resources */,
 				BA62A9102CE88A2700367143 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,8 +351,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC6C4082CEDD123007BDBEB /* ExchangeRatesTests.swift in Sources */,
+				BAC902282CEF2E5200D81595 /* ExchangeRates.model.swift in Sources */,
+				BAC6C4082CEDD123007BDBEB /* ExchangeRatesViewModelTests.swift in Sources */,
+				BAC902272CEF2E3E00D81595 /* HTTPRequests.swift in Sources */,
 				BAC6C4072CEDD123007BDBEB /* currency-converterTests.swift in Sources */,
+				BAC902262CEF2E3B00D81595 /* ExchangeRatesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +450,6 @@
 		};
 		BA62A92B2CE88A2700367143 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA62A9592CE8A50300367143 /* Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -500,7 +507,7 @@
 		};
 		BA62A92D2CE88A2700367143 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA62A9592CE8A50300367143 /* Env.xcconfig */;
+			baseConfigurationReference = BAC902242CEF275800D81595 /* Env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,6 +538,7 @@
 		};
 		BA62A92E2CE88A2700367143 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAC902242CEF275800D81595 /* Env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -561,6 +569,7 @@
 		};
 		BA62A9302CE88A2700367143 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAC902242CEF275800D81595 /* Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -581,6 +590,7 @@
 		};
 		BA62A9312CE88A2700367143 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAC902242CEF275800D81595 /* Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

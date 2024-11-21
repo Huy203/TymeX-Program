@@ -11,7 +11,7 @@ class CurrencyViewModel: ObservableObject {
     }
 
     func fetchExchangeRates() {
-        if(result != nil) {
+        if(result != nil || rates != [:]) {
             return
         }
         else{
@@ -36,10 +36,8 @@ class CurrencyViewModel: ObservableObject {
 
     func convert (amount: Double, from: String, to: String) {
         if let fromRate = rates[from], let toRate = rates[to] {
-            DispatchQueue.main.async {
-                self.result = (amount / fromRate) * toRate
-                self.errorMessage = nil
-            }
+            self.result = (amount / fromRate) * toRate
+            self.errorMessage = nil
         }
         else {
             api.get(endpoint: "convert", queryParams: ["from": from, "to": to, "amount": "\(amount)"]) { (result: Result<IExchangeRateResult, Error>) in
